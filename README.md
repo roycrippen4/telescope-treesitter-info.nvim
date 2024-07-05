@@ -2,9 +2,9 @@
 
 Are you tired of the crappy experience navigating the builtin `TSInstallInfo` window?
 When you just want to search to see if you have a parser installed?
-But instead you have to scroll and scroll until you find the language you're looking for?
+But instead you have to scroll and scroll and scroll some more until you find the language you're looking for?
 
-| ![help](https://github.com/roycrippen4/telescope-treesitter-info.nvim/blob/images/old.png "Old") |
+| ![shit](https://github.com/roycrippen4/telescope-treesitter-info.nvim/blob/images/old.png "Old") |
 | :----------------------------------------------------------------------------------------------: |
 |                  Searching to see if a parser is installed with `TSInstallInfo`                  |
 
@@ -13,17 +13,13 @@ What if I told you that you could browse, install, and uninstall treesitter pars
 
 #### WELL SEARCH NO MORE!
 
-Well, I guess I mean continue to search, but with my extension, but also specifically for just treesitter parsers... I digress.
+Well, I guess I mean continue to search, but specifically for treesitter parsers inside telescope... I digress.
 
-## Using help
+## Treesitter Install Info
 
-| ![Telescope helptags](https://github.com/catgoose/telescope-helpgrep.nvim/blob/7c52e4840ee0f404d8f79d3a457d6214a073c1e9/helpgrep1.png "Telescope help_tags") |
-| :----------------------------------------------------------------------------------------------------------------------------------------------------------: |
-|                                   Searching for help the help topic: `vim.api.nvim_open_win` using `:Telescope help_tags`                                    |
-
-| ![Telescope helpgrep](https://github.com/catgoose/telescope-helpgrep.nvim/blob/7c52e4840ee0f404d8f79d3a457d6214a073c1e9/helpgrep2.png "Telescope helpgrep") |
-| :---------------------------------------------------------------------------------------------------------------------------------------------------------: |
-|                                     Grepping through help files for `vim.api.nvim_open_win` with `:Telescope helpgrep`                                      |
+| ![good](https://github.com/roycrippen4/telescope-treesitter-info.nvim/blob/images/old.png "New") |
+| :----------------------------------------------------------------------------------------------: |
+|                      Searching a parser using `:Telescope treesitter_info`                       |
 
 ## Alternative
 
