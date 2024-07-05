@@ -1,30 +1,21 @@
-# Telescope helpgrep
+# Telescope Treesitter Info
 
-<!--toc:start-->
-
-- [Telescope helpgrep](#telescope-helpgrep)
-  - [Using help](#using-help)
-  - [Alternative](#alternative)
-  - [Usage](#usage)
-    - [Default picker options](#default-picker-options)
-  - [Setup](#setup)
-    - [Defaults](#defaults)
-    - [Example](#example)
-  - [Extra](#extra)
-  <!--toc:end-->
-
-Telescope extension that uses Telescope builtins (`live_grep` or `grep_string`)
-to grep through help files
-
-Sometimes help tags are not available for what you are looking for with
-`Telescope help_tags` or `:help`. Telescope helpgrep can be used to grep through
-help files using Telescope's builtins
-
-## Using help
+Are you tired of the crappy experience navigating the builtin `TSInstallInfo` window?
+When you just want to search to see if you have a parser installed?
+But instead you have to scroll and scroll until you find the language you're looking for?
 
 | ![help](https://github.com/roycrippen4/telescope-treesitter-info.nvim/blob/images/old.png "Old") |
 | :----------------------------------------------------------------------------------------------: |
-|             Searching for help the help topic: `vim.api.nvim_open_win` using `:help`             |
+|                  Searching to see if a parser is installed with `TSInstallInfo`                  |
+
+What if I told you it didn't have to be this way?
+What if I told you that you could browse, install, and uninstall treesitter parsers from the comfort telescope.nvim?
+
+#### WELL SEARCH NO MORE!
+
+Well, I guess I mean continue to search, but with my extension, but also specifically for just treesitter parsers... I digress.
+
+## Using help
 
 | ![Telescope helptags](https://github.com/catgoose/telescope-helpgrep.nvim/blob/7c52e4840ee0f404d8f79d3a457d6214a073c1e9/helpgrep1.png "Telescope help_tags") |
 | :----------------------------------------------------------------------------------------------------------------------------------------------------------: |
@@ -57,59 +48,6 @@ Uses `Telescope grep_string` builtin:
 
 ```lua
 :Telescope helpgrep grep_string
-```
-
-### Default picker options
-
-These are the default options passed into the Telescope picker
-
-```lua
-{
-  prompt_title = "Help Grep",
-  glob_pattern = "*.txt",
-  disable_coordinates = true,
-  path_display = { "tail" },
-}
-```
-
-These options can be overridden by passing opts table into `live_grep` or `grep_string`
-`:help telescope.builtin.live_grep` and `:help telescope.builtin.grep_string`
-
-```lua
-require("telescope-helpgrep").live_grep({
-  prompt_title = "Helpy McGrepperson",
-  ...,
-})
-```
-
-```lua
-require("telescope-helpgrep").grep_string({
-  prompt_title = "grep_string",
-  ...,
-})
-```
-
-## Setup
-
-`ignore_paths` defines which paths will be ignored by helpgrep
-`mappings` defines mappings overrides
-
-### Defaults
-
-```lua
-local actions = require("telescope.actions")
-local builtin = require("telescope.builtin")({
-  ignore_paths = {},
-  mappings = {
-    i = {
-      ["<CR>"] = actions.select_tab,
-    },
-    n = {
-      ["<CR>"] = actions.select_tab,
-    },
-  },
-  default_grep = builtin.live_grep,
-})
 ```
 
 ### Example
