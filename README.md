@@ -22,7 +22,26 @@ Well, I guess I mean continue to search, but specifically for treesitter parsers
 
 | ![good](https://github.com/roycrippen4/telescope-treesitter-info.nvim/blob/images/picker.png "New") |
 | :-------------------------------------------------------------------------------------------------: |
-|                        Searching a parser using `:Telescope treesitter_info`                        |
+|                      Searching for a parser using `:Telescope treesitter_info`                      |
+
+### Installation
+
+Setup is as easy as adding the extension as a dependency to your telescope config!
+
+```lua
+-- using lazy.nvim
+return {
+  'nvim-telescope/telescope.nvim',
+  ...
+  dependencies = {
+    'nvim-lua/plenary.nvim',
+    'roycrippen4/telescope-treesitter-info.nvim',
+  },
+  ...
+  config = function()
+    require('telescope').load_extension('treesitter_info')
+  end
+```
 
 ## Configuration
 
@@ -53,25 +72,6 @@ You can even set it up as a keymap!!!
       '<cmd> Telescope treesitter_info <CR>',
       { desc = 'Find treesitter info' }
   )
-```
-
-### Setup
-
-Setup is as easy as adding the extension as a dependency to your telescope config!
-
-```lua
--- using lazy.nvim
-return {
-  'nvim-telescope/telescope.nvim',
-  ...
-  dependencies = {
-    'nvim-lua/plenary.nvim',
-    'roycrippen4/telescope-treesitter-info.nvim',
-  },
-  ...
-  config = function()
-    require('telescope').load_extension('treesitter_info')
-  end
 ```
 
 ### Not Convinced?
