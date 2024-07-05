@@ -17,9 +17,9 @@ Well, I guess I mean continue to search, but specifically for treesitter parsers
 
 ## Treesitter Install Info
 
-| ![good](https://github.com/roycrippen4/telescope-treesitter-info.nvim/blob/images/old.png "New") |
-| :----------------------------------------------------------------------------------------------: |
-|                      Searching a parser using `:Telescope treesitter_info`                       |
+| ![good](https://github.com/roycrippen4/telescope-treesitter-info.nvim/blob/images/picker.png "New") |
+| :-------------------------------------------------------------------------------------------------: |
+|                        Searching a parser using `:Telescope treesitter_info`                        |
 
 ## Alternative
 
