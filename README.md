@@ -26,7 +26,7 @@ Well, I guess I mean continue to search, but specifically for treesitter parsers
 
 ### Installation
 
-Setup is as easy as adding the extension as a dependency to your telescope config!
+Setup _easy_! Add the extension as a dependency to your telescope config!
 
 ```lua
 -- using lazy.nvim
@@ -45,7 +45,7 @@ return {
 
 ## Configuration
 
-We don't support configuration! SIMPLE
+We don't support configuration! _SIMPLE_
 
 ## Usage
 
