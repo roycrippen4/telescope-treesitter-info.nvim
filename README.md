@@ -1,97 +1,88 @@
 # Telescope Treesitter Info
 
-Are you tired of the crappy experience navigating the builtin `TSInstallInfo` window?
-When you just want to search to see if you have a parser installed?
-But instead you have to scroll and scroll and scroll some more until you find the language you're looking for?
+👎 Are you tired of the crappy experience navigating the builtin `TSInstallInfo` window? 👎
+
+👍 When you just want to search to see if you have a parser installed? 👍
+
+🚫 But instead you have to scroll, scroll, and scroll some more until you find the language you're looking for? 🚫
 
 | ![shit](https://github.com/roycrippen4/telescope-treesitter-info.nvim/blob/images/old.png "Old") |
 | :----------------------------------------------------------------------------------------------: |
 |                  Searching to see if a parser is installed with `TSInstallInfo`                  |
 
 What if I told you it didn't have to be this way?
+
 What if I told you that you could browse, install, and uninstall treesitter parsers from the comfort telescope.nvim?
 
-#### WELL SEARCH NO MORE!
+##### :rocket: WELL SEARCH NO MORE! :rocket:
 
 Well, I guess I mean continue to search, but specifically for treesitter parsers inside telescope... I digress.
 
-## Treesitter Install Info
+## INTRODUCING Treesitter Install Info!
 
 | ![good](https://github.com/roycrippen4/telescope-treesitter-info.nvim/blob/images/picker.png "New") |
 | :-------------------------------------------------------------------------------------------------: |
 |                        Searching a parser using `:Telescope treesitter_info`                        |
 
-## Alternative
+## Configuration
 
-Of course you can use the built in `helpgrep`, but I wanted something more
-"Telescopic" rather than having to filter through quickfix.
+We don't support configuration! SIMPLE
 
 ## Usage
 
-Defaults to `live_grep` picker:
+Use the following command to open the treesitter parser list in telescope!
 
 ```lua
-:Telescope helpgrep
+:Telescope treesitter_info
 ```
 
-Uses `Telescope live_grep` builtin:
+We also took the liberty of deciding you don't need the old command anymore now that you are stuck in our walled garden!
+
+:fire: You can also use the original command to open the parser list in telescope because **we overrode it**! :fire:
 
 ```lua
-:Telescope helpgrep live_grep
+:TSInstallInfo
 ```
 
-Uses `Telescope grep_string` builtin:
+You can even set it up as a keymap!!!
 
 ```lua
-:Telescope helpgrep grep_string
+  vim.keymap.set(
+      'n',
+      '<leader>fp',
+      '<cmd> Telescope treesitter_info <CR>',
+      { desc = 'Find treesitter info' }
+  )
 ```
 
-### Example
+### Setup
 
-In Telescope setup:
+Setup is as easy as adding the extension as a dependency to your telescope config!
 
 ```lua
-local actions = require("telescope.actions")
-local builtin = require("telescope.builtin")
-
-telescope.setup({
+-- using lazy.nvim
+return {
+  'nvim-telescope/telescope.nvim',
   ...
-  extensions = {
-    helpgrep = {
-      ignore_paths = {
-        vim.fn.stdpath("state") .. "/lazy/readme",
-      },
-      mappings = {
-        i = {
-          ["<CR>"] = actions.select_default,
-          ["<C-v>"] = actions.select_vertical,
-        },
-        n = {
-          ["<CR>"] = actions.select_default,
-          ["<C-s>"] = actions.select_horizontal,
-        }
-      },
-      default_grep = builtin.live_grep,
-    }
-  }
-})
+  dependencies = {
+    'nvim-lua/plenary.nvim',
+    'roycrippen4/telescope-treesitter-info.nvim',
+  },
+  ...
+  config = function()
+    require('telescope').load_extension('treesitter_info')
+  end
 ```
 
-```lua
-require("telescope").load_extension("helpgrep")
-```
+### Not Convinced?
 
-No paths are ignored by default, but if you use `lazy.nvim` it is recommended
-to add `vim.fn.stdpath("state") .. "/lazy/readme"` to the `ignore_paths` table
+Well let me tell you this!
 
-## TODO
+You can select a language with `<cr>` in telescope's results and the plugin will autofill the corresponding Install or Uninstall command for that language in the command line!
 
-- [ ] Set win/buffer optsions for help window, configurable by setup opts
+Let's say you don't have the `java` parser installed (because who would, am I right?).
 
-## Extra
+You can open the picker using any of the methods described above, search for `java`, and hit `<cr>`.
 
-My other neovim projects
-
-- [neovim config](https://github.com/catgoose/nvim)
-- [do-the-needful.nvim](https://github.com/catgoose/do-the-needful.nvim)
-- [vue-goto-definition](https://github.com/catgoose/vue-goto-definition.nvim)
+The plugin will have autofilled `:TSInstall java`.
+All you have to do now, and this is important, is hit `<esc>` to exit, because why the _fuck_ would you install the parser for java! It's that simple!
